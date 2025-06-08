@@ -1,7 +1,8 @@
 {
-  "name": "practice-app-1",
+  "name": "react-component-docs",
+  "author": "Kyle Kirchgessner",
   "homepage": ".",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": false,
   "scripts": {
     "dev": "next dev",
