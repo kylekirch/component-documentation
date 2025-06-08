@@ -23,8 +23,8 @@ const body_Iceland = Iceland({
 });
 
 export const metadata: Metadata = {
-  title: "Test App 1",
-  description: "Created by Kyle Kirchgessner, began 5/27/25",
+  title: "- Component Docs -",
+  description: "Created by Kyle Kirchgessner, development began 5/27/25",
 };
 
 export default function RootLayout({
