@@ -763,7 +763,6 @@ export default function Home() {
               />
           </li>
         </ul>
-      <MainButton buttonText="Test" href="#test"/>
       </main>
     </div>
 
