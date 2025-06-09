@@ -104,17 +104,21 @@ li .properties button{
 }
 
 /*Main Button styling*/
-button.mainButton{
+a.buttonWrapper{
+  width: min-content;
+} a.buttonWrapper:hover {
+  opacity: .8;
+  cursor: pointer;
+  transition: all .1s;
+} button.mainButton{
   padding: 10px;
   border-radius: 5px;
   font-family: var(--font-goldman);
   border: 1px solid var(--background);
   box-shadow: 1px 0px 1px 0px #000000;
   background-color: var(--accent);
-} button.mainButton:hover {
-  opacity: .8;
+} .mainButton:hover {
   cursor: pointer;
-  transition: all .1s;
 } 
 
 /*Inline text decoration classes*/
@@ -167,6 +171,7 @@ div.prop {
   background-color: transparent;
   backdrop-filter: invert(.1);
   position: sticky;
+  z-index: 10;
   width: 100%;
   top: 0;
   padding: 10px;

@@ -3,6 +3,7 @@ import MainTitle from "./components/MainTitle";
 import Subtitle from "./components/Subtitle";
 import Description from "./components/Description";
 import Properties from "./components/Properties";
+import MainButton from "./components/MainButton";
 
 export default function Home() {
   return (
@@ -244,10 +245,10 @@ export default function Home() {
               <pre><code>
                 {`Example Usage: \n\n`}
                 {`  <MainButton \n`}
-                {`    buttonText={"Send"};          /* Optional IFF an 'icon' is provided */ \n`}
-                {`    icon={'/icon_envelope.svg'};  /* Optional IFF a 'buttonText' is provided */ \n`}
-                {`    iconWidth={50}; \n`}
-                {`    id={"defaultButton"}; \n`}
+                {`    buttonText={"Send"}          /* Optional IFF an 'icon' is provided */ \n`}
+                {`    icon={'/icon_envelope.svg'}  /* Optional IFF a 'buttonText' is provided */ \n`}
+                {`    iconWidth={50} \n`}
+                {`    id={"defaultButton"} \n`}
                 {`  /> \n\n`}
                 {`(.tsx)`}
               </code></pre>
@@ -309,8 +310,8 @@ export default function Home() {
                 {` <Navbar \n`}
                 {`  leftIcon={["./smile.svg", "#about"]} \n`}
                 {`  leftText={["Shop", "/shop"]} \n`}
-                {`  navbarTitle={"Home"} \n`}
-                {`  rightText={"Contact"} \n`}
+                {`  navbarTitle={["Home", "#"]} \n`}
+                {`  rightText={["Contact", "#"]} \n`}
                 {`  rightIcon={["./phone.svg", "#contact"]} \n`}
                 {`  id={"defaultNavbar"}  \n`}
                 {` /> \n\n`}
@@ -350,8 +351,8 @@ export default function Home() {
                     'Array<string>[2]',
                     ''],
                   ['navbarTitle', 
-                    'navbarTitle={"Home"}',
-                    'string',
+                    'navbarTitle={["Home", "#home"]}',
+                    'Array<string>[2]',
                     'required'],
                   ['rightText', 
                     'rightText={["Bio", "/bio"]}',
@@ -628,7 +629,7 @@ export default function Home() {
                   {`          ["More", "#"] \n`}
                   {`    ]} \n`}
                   {`    descriptions={[ \n`}
-                  {`          "Copyright Kyle Kirchgessner" \n`}
+                  {`          "Copyright Kyle Kirchgessner", \n`}
                   {`          "All rights reserved, 2025" \n`}
                   {`    ]} \n`}
                   {`    id={"defaultFooter"}  \n`}
@@ -762,7 +763,7 @@ export default function Home() {
               />
           </li>
         </ul>
-      
+      <MainButton buttonText="Test" href="#test"/>
       </main>
     </div>
 

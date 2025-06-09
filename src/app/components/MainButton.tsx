@@ -31,7 +31,7 @@ const MainButton = (props: {
   const id = props.id? props.id : "defaultButton"
   
   return(
-    <a href={href}>
+    <a href={href} className="buttonWrapper">
       <button className="mainButton" id={id}>
         {icon? /* Validate icon address - Returns an empty element if none provided*/
                     <Image 
