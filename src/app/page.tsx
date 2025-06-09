@@ -3,7 +3,6 @@ import MainTitle from "./components/MainTitle";
 import Subtitle from "./components/Subtitle";
 import Description from "./components/Description";
 import Properties from "./components/Properties";
-import MainButton from "./components/MainButton";
 
 export default function Home() {
   return (
