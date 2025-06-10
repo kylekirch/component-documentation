@@ -1,0 +1,177 @@
+/*Default Component Styling*
+*
+*
+*
+*/
+/*Component Type Definitions*/
+#accent{
+  color: var(--accent);
+} #underlined {
+  border-bottom: 1px solid var(--foreground);
+} #text {
+  color: #ebebeb;
+} @media (prefers-color-scheme: light) {
+  #invertable {
+    filter:invert(1)
+  }
+}
+/*MainTitle Component*/
+h1.mainTitle {
+  font-family: var(--font-anton);
+  font-weight: 400;
+  font-size: 64px;
+  letter-spacing: 1px;
+  -webkit-text-stroke-color: var(--background);
+  -webkit-text-stroke-width: 1px;
+} 
+/*Subtitle Component*/
+h3.subTitle{
+  font-family: var(--font-goldman);
+  font-weight: 400;
+  font-size: 56px;
+  -webkit-text-stroke-color: var(--background);
+  -webkit-text-stroke-width: 1px;
+}
+/*Description Component*/
+p.description{
+  font-family: var(--font-iceland);
+  font-size: 42px;
+}
+/*Hyperlink Component*/
+a.hyperlink {
+  font-family: var(--font-iceland);
+  font-size: 42px;
+  color: var(--hyperlink);
+  text-decoration: none;
+  cursor: pointer;
+} a.hyperlink:hover {
+  filter: opacity(.8);
+}
+/*MainButton Component*/
+button.mainButton{
+  padding: 10px;
+  border-radius: 5px;
+  font-family: var(--font-goldman);
+  border: 1px solid var(--background);
+  box-shadow: 1px 0px 1px 0px #000000;
+  background-color: var(--accent);
+} button.mainButton:hover {
+  opacity: .8;
+  cursor: pointer;
+  transition: all .1s;
+} 
+/*Navbar Component*/
+.navbar {
+  background-color: transparent;
+  backdrop-filter: invert(.1);
+  position: sticky;
+  width: 100%;
+  top: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0px 0px 5px 5px;
+} .navbarSection {
+  min-width: 25%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 5px
+} .navbarSection:last-of-type {
+  justify-content: flex-end;
+} .navbarSection .hyperlink{
+  width: 100%;
+  color: #ebebeb;
+}
+/*Card Component*/
+.card {
+  border: 1px solid var(--foreground);
+  width: fit-content;
+  max-width: 850px;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+/*CardDeck Component*/
+.cardDeck {
+  border: 1px solid var(--foreground);
+  border-radius: 10px;
+  width: fit-content;
+  padding: 15px;
+  padding-top: 0px;
+} .cardDeck .card{
+  width: 650px;
+  border: none;
+} .cardDeck h1 {
+  text-align: center;
+}
+/*Carousel Component*/
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+} .modalContainer .modalFocus {
+  text-align: center;
+  align-self: center;
+  align-items: center;
+} .carouselButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+/*ContactForm Component*/
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+  width: 500px;
+  border: 1px solid var(--foreground);
+  border-radius: 10px;
+} .contactForm label {
+  padding: 10px;
+} .contactForm input {
+  min-height: 40px;
+  min-width: 75%;
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px;
+} .contactForm textarea {
+  resize: none;
+  min-height: 150px;
+  width: 100%;
+  padding: 10px;
+} .contactForm .submitButton {
+  margin: 20px 0px;
+}
+/*IconBelt Component*/
+.iconBelt {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/*Footer Component*/
+.footer {
+  border-top: 1px solid var(--foreground);
+  width: 100%;
+  padding: 25px 10px;
+  display: flex;
+  flex-direction: column;
+} .footer .footerText {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+} .footerText #left {
+  width: fit-content;
+} .footerText #right {
+  width: fit-content;
+} .footer .iconBelt {
+  margin: 25px 0px;
+  padding: 25px 0px;
+}

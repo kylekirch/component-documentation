@@ -1,6 +1,4 @@
-/*Global Component Styling*/
-
-
+/*GLOBAL HTML/Body (MOVE TO GLOBAL CSS FILE)*/
 :root {
   --background: #ebebeb;
   --foreground: #000000;
@@ -8,32 +6,23 @@
   --hyperlink: #26C485;
   --backup1: #D0ADF0;
 }
-
-
 /*Initial media queries*/
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
     --foreground: #ebebeb;
-    --accent: #470FF4;
-    --hyperlink: #26C485;
   }
-
-}
-@media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
-
-
-/*Foundational HTML/Body stylings*/
-html,
-body {
+html {
   max-width: 100vw;
   scroll-behavior: smooth;
 }
 body {
+  max-width: 100vw;
+  scroll-behavior: smooth;
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-goldman), var(--font-anton), var(--font-iceland);
@@ -45,7 +34,4 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-.main {
-    overflow-x: hidden;
 }

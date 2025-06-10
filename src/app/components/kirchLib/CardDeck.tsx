@@ -1,4 +1,5 @@
-import React from "react";
+import styles from "./core/kirchLib.module.css"
+
 import Card from "./Card";
 import MainTitle from "./MainTitle";
 
@@ -22,7 +23,7 @@ const CardDeck = (props: {
 
 
   return(
-    <div className="cardDeck" id={id}>
+    <div className={styles.cardDeck} id={id}>
       {deckTitle? <MainTitle titleText={deckTitle}/> : <></>}
       {cards.map((card, index) => (
         <Card key={index} header={card[0]} body={card[1]} />

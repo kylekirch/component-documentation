@@ -1,3 +1,6 @@
+
+import styles from "./core/kirchLib.module.css"
+
 import React from "react";
 import Subtitle from "./Subtitle"
 import Description from "./Description"
@@ -23,9 +26,9 @@ const Card = (props: {
                   props.body? '': "[Card]");
 
   return(
-    <div className="card" id={id}>
+    <div className={styles.card} id={id}>
       {header?
-          <Subtitle subText={header} id="underlined" />
+          <Subtitle subText={header} id={styles.underlined} />
             : 
           <></>
       }

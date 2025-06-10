@@ -1,5 +1,8 @@
 "use client"
-import React, { useRef, useState } from 'react';
+
+import styles from "./core/kirchLib.module.css"
+
+import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import Subtitle from './Subtitle';
 
@@ -27,7 +30,7 @@ export default function ContactForm(props: {
 
   /* Handle sending the email */
   const sendEmail = (e: React.FormEvent) => {
-    emailjs.init('EMAILJS_USER_ID_PLACEHOLDER')
+    emailjs.init('EMAIL_JS_KEY_HERE')
     e.preventDefault();
     if (!formRef.current) return;
 
@@ -68,18 +71,18 @@ export default function ContactForm(props: {
   };
 
   return (
-    <form className="contactForm" id={id} ref={formRef} onSubmit={sendEmail}>
+    <form className={styles.contactForm} id={id} ref={formRef} onSubmit={sendEmail}>
       {fields.map((field,index) => (
         <label key={index}>
           <Subtitle key={index} subText={field[0]}/>
           {field[1] === "textarea"? 
-            <textarea id="messageBox" name={field[2]} required />
+            <textarea id={styles.messageBox} name={field[2]} required />
               :
             <input type={field[1]} name={field[2]} required />
           }
         </label>
       ))}
-      <button className="submitButton" type="submit"><p>{status}</p></button>
+      <button className={styles.submitButton} type="submit"><p>{status}</p></button>
     </form>
   );
 };

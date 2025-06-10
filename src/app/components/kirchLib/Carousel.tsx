@@ -1,9 +1,13 @@
 'use client'
-import React, { useState } from 'react';
+
+import styles from "./core/kirchLib.module.css"
+
+import { useState } from 'react';
 import Image from 'next/image';
-import Icon from "./Icon"
 import Subtitle from './Subtitle';
 import Description from './Description';
+import upIcon from "./core/assets/img/icon_up.svg"
+import downIcon from "./core/assets/img/icon_down.svg"
 
 const Modal = (props: {
                         title: string
@@ -12,14 +16,14 @@ const Modal = (props: {
                         projectURL: string
 }) => {
   return(
-    <div className="modalContainer">
+    <div className={styles.modalContainer}>
       <Subtitle subText={props.title}/>
-        <div className="modalFocus">
+        <div className={styles.modalFocus}>
           <a href={props.projectURL}>
             <Image
-                    className="modalImage"
+                    className={styles.modalImage}
                     src={props.imgURL}
-                    alt={props.title+" Project preview image"}
+                    alt={props.title+" modal preview image"}
                     width={400}
                     height={400}
                     priority
@@ -43,7 +47,7 @@ const Carousel = (props: {
     imgURL: string;
     projectURL: string;
   };
-
+  
   const modalData = props.modalData;
 
   //create an array of the modal items to be used and their corresponding data
@@ -86,9 +90,9 @@ const Carousel = (props: {
         imgURL={currentModal.imgURL}
         projectURL={currentModal.projectURL}
       />
-      <div className='carouselButton'>
-        <button onClick={handleClickUp}><Icon src="/icon_up.svg"/></button>
-        <button onClick={handleClickDown}><Icon src="/icon_down.svg"/></button>
+      <div className={styles.carouselButton}>
+        <button onClick={handleClickUp}><Image src={upIcon} alt={"Up button"}/></button>
+        <button onClick={handleClickDown}><Image src={downIcon} alt={"Down button"}/></button>
       </div>
     </div>
   );
