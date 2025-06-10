@@ -1,4 +1,5 @@
-import React from "react";
+import styles from "./core/blocKit.module.css"
+
 import Image from "next/image";
 import Subtitle from "./Subtitle";
 
@@ -32,7 +33,7 @@ const MainButton = (props: {
   
   return(
     <a href={href}>
-      <button className="mainButton" id={id}>
+      <button className={styles.MainButton} id={id}>
         {icon? /* Validate icon address - Returns an empty element if none provided*/
                     <Image 
                         src={icon} 

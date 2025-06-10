@@ -1,7 +1,5 @@
+import styles from "./core/blocKit.module.css"
 
-import styles from "./core/kirchLib.module.css"
-
-import React from "react";
 import Subtitle from "./Subtitle"
 import Description from "./Description"
 

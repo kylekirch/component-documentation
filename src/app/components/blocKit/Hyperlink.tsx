@@ -1,4 +1,5 @@
-import React from "react";
+import styles from "./core/blocKit.module.css";
+
 import Description from "./Description";
 
 const Hyperlink = (
@@ -21,7 +22,7 @@ const Hyperlink = (
   const id = props.id? props.id : "defaultDescription"
   
   return (
-    <a className="hyperlink" href={href} ><Description text={linkText} id={id}/></a>
+    <a className={styles.hyperlink} href={href} ><Description text={linkText} id={id}/></a>
   )
 };
 

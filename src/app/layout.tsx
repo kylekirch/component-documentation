@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Anton, Goldman, Iceland } from "next/font/google";
 import "./globals.css";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Footer from "./components/blocKit/Footer";
+import Navbar from "./components/blocKit/Navbar";
 
 const heading_Anton = Anton({
   weight: "400",
@@ -23,7 +23,7 @@ const body_Iceland = Iceland({
 });
 
 export const metadata: Metadata = {
-  title: "- Component Docs -",
+  title: "blocKit Documentation",
   description: "Created by Kyle Kirchgessner, development began 5/27/25",
 };
 

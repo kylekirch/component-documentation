@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "./core/kirchLib.module.css"
+import styles from "./core/blocKit.module.css"
 
 import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';

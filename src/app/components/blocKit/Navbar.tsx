@@ -1,6 +1,9 @@
-import React from "react";
+import styles from "./core/blocKit.module.css"
+
 import MainButton from "./MainButton"
 import Hyperlink from "./Hyperlink";
+import errorIcon from "./core/assets/img/icon_error.svg";
+
 const Navbar = (props: {
                 leftIcon?:Array<string>;
                 leftText?:Array<string>;
@@ -18,29 +21,28 @@ const Navbar = (props: {
     * id?:string - (Optional) An optional id attribute that <div className="navbar"/> inherits
   */
 
-  /*Designates the location of the 'no file attatched' error image*/
-  const errorImageAddress = `/icon_error.svg`;
+
   /* Normalize left icon address - Defaults to errorImageAddress if none provided */
-  const leftIcon = props.leftIcon? props.leftIcon: [errorImageAddress, '#']
+  const leftIcon = props.leftIcon? props.leftIcon: [errorIcon, '#']
   
   /* Normalize left button text - Defaults to "leftText" if none provided */
-  const leftText = props.leftText? props.leftText: ["leftText", '#']
+  const leftText = props.leftText? props.leftText: ["[Text]", '#']
 
   /* Normalize navbar title - Defaults to "navbarTitle" if none provided */
-  const navbarTitle = props.navbarTitle? props.navbarTitle: ["navbarTitle", '#'];
+  const navbarTitle = props.navbarTitle? props.navbarTitle: ["[Title]", '#'];
 
   /* Normalize right button text - Defaults to "rightText" if none provided */
-  const rightText = props.rightText? props.rightText: ["rightText", '#'] 
+  const rightText = props.rightText? props.rightText: ["[Text]", '#'] 
   
   /* Normalize right icon address - defaults to errorImageAddress if none provided */
-  const rightIcon = props.rightIcon? props.rightIcon: [errorImageAddress, '#']
+  const rightIcon = props.rightIcon? props.rightIcon: [errorIcon, '#']
 
   /* Normalize id - defaults class to 'defaultNavbar' if none provided */
   const id = props.id? props.id:'defaultNavbar';
 
   return(
-    <div className="navbar" id={id}>
-      <div className="navbarSection">
+    <div className={styles.navbar} id={id}>
+      <div className={styles.navbarSection}>
         {props.leftIcon? <MainButton
                             icon={leftIcon[0]}
                             href={leftIcon[1]}
@@ -58,18 +60,18 @@ const Navbar = (props: {
                           <></>
                         }
       </div>
-      <div className="navbarSection">
+      <div className={styles.navbarSection}>
         {props.navbarTitle? <Hyperlink 
                                 linkText={navbarTitle[0]} 
                                 href={navbarTitle[1]}
-                                id={"text"}
+                                id={styles.text}
                               />
                                 
                               :
                             <></>
                           }
       </div>
-      <div className="navbarSection">
+      <div className={styles.navbarSection}>
         {props.rightText? <MainButton
                             buttonText={rightText[0]}
                             href={rightText[1]}

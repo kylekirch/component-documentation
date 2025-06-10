@@ -1,9 +1,10 @@
 'use client'
-import React, { useState } from 'react';
-import Subtitle from "./Subtitle"
-import Icon from './Icon';
+import { useState } from 'react';
+import Subtitle from "./blocKit/Subtitle"
+import Description from './blocKit/Description';
 import Prop from './Prop';
-import Description from './Description';
+import Image from 'next/image';
+
 
 const Properties = (
               props: {
@@ -85,7 +86,7 @@ const Properties = (
                         ""
         }/>
       <button onClick={handleClick}>
-        <Icon src={currentButtonIcon} width={25} />
+        <Image src={currentButtonIcon} alt={"More Button "}width={25} height={25}/>
       </button>
     </div>
 )};

@@ -1,4 +1,4 @@
-import styles from "./core/kirchLib.module.css"
+import styles from "./core/blocKit.module.css"
 
 const Subtitle = (
                   props: {

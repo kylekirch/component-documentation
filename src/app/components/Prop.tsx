@@ -1,6 +1,6 @@
-import React from "react";
-import Description from "./Description";
-import Hyperlink from "./Hyperlink"
+
+import Description from "./blocKit/Description";
+import Hyperlink from "./blocKit/Hyperlink"
 
 const Prop = (props: {
               propName?:string; 

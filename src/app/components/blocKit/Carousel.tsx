@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./core/kirchLib.module.css"
+import styles from "./core/blocKit.module.css"
 
 import { useState } from 'react';
 import Image from 'next/image';

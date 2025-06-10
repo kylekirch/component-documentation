@@ -1,4 +1,4 @@
-import styles from "./core/kirchLib.module.css"
+import styles from "./core/blocKit.module.css"
 
 import Card from "./Card";
 import MainTitle from "./MainTitle";

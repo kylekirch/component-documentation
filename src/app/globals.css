@@ -49,3 +49,45 @@ body {
 .main {
     overflow-x: hidden;
 }
+
+div.prop {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: flex-start;
+} .prop div{
+  width: 15%;
+} .prop div:nth-child(2) {
+  width: 45%;
+} .prop div:nth-child(3) {
+  width: 25%;
+} .prop div .description{
+  width: fit-content;
+} .prop:nth-child(even) {
+  backdrop-filter: invert(.1);
+} li .properties {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} li .properties .subtitle{
+  margin: 10px;
+  align-self: flex-start;
+} li .properties button{
+  background-color: var(--accent);
+  border: none;
+  padding-top: 5px;
+  margin-top: 15px;
+  width: 100px;
+  cursor: pointer;
+} .codeSection pre {
+  width: fit-content;
+  max-height: fit-content;
+} .codeSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}

@@ -1,5 +1,6 @@
-import React from "react";
-import Icon from "./Icon";
+import styles from "./core/blocKit.module.css"
+
+import Image from "next/image";
 
 const IconBelt = (props: {
                   icons:Array<string>; 
@@ -27,16 +28,18 @@ const IconBelt = (props: {
   const id = props.id? props.id : "defaultBelt";
 
   return(
-    <div className="iconBelt" id={id}>
+    <div className={styles.iconBelt} id={id}>
       {iconList.map((icon, index) => (
-          <Icon 
-            key={index} 
-            src={icon[0]} 
-            alt={"Belt Icon"}
-            href={icon[1]}
-            iconType="invertable" 
-            width={50}
-          />
+          <a key={index} href={icon[1]}>
+            <Image 
+              key={index} 
+              src={icon[0]} 
+              alt={"Belt Icon"}
+              id={styles.invertable}
+              width={50}
+              height={50}
+            />
+          </a>
       ))}
     </div>
   )
