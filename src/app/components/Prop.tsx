@@ -20,7 +20,7 @@ const Prop = (props: {
 
   return(
     <div className="prop" id={id}>
-      <div><Hyperlink linkText={propName} id="underlined" /></div>
+      <div><Hyperlink text={propName} id="underlined" /></div>
       
         {props.example?
         <div><pre><code>{props.example}</code></pre></div>

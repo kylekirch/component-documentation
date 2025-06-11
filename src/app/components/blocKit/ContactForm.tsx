@@ -74,7 +74,7 @@ export default function ContactForm(props: {
     <form className={styles.contactForm} id={id} ref={formRef} onSubmit={sendEmail}>
       {fields.map((field,index) => (
         <label key={index}>
-          <Subtitle key={index} subText={field[0]}/>
+          <Subtitle key={index} text={field[0]}/>
           {field[1] === "textarea"? 
             <textarea id={styles.messageBox} name={field[2]} required />
               :

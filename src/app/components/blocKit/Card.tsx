@@ -22,20 +22,21 @@ const Card = (props: {
                   props.header
                     :
                   props.body? '': "[Card]");
+  const children = props.children? props.children : <></>
 
   return(
     <div className={styles.card} id={id}>
       {header?
-          <Subtitle subText={header} id={styles.underlined} />
+          <Subtitle text={header} id={styles.underlined} />
             : 
           <></>
       }
       {body?
           <Description text={body}/>
-                  :
-                  <></>
+            :
+          <></>
           }
-    {props.children}
+    {children}
     </div>
 )};
 

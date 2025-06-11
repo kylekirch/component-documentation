@@ -51,7 +51,7 @@ export default function Footer(props: {
           {hyperlinks.map((hyperlink, index) => (
             <Hyperlink 
                 key={index} 
-                linkText={hyperlink[0]} 
+                text={hyperlink[0]} 
                 href={hyperlink[1]} 
                 id={styles.underlined}
               />

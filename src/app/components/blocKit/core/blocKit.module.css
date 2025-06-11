@@ -3,23 +3,20 @@
 *
 *
 */
-/*Component Type Definitions*/
+
+/*Text Classes*/
 #accent{
   color: var(--accent);
 } #underlined {
   border-bottom: 1px solid var(--foreground);
 } #text {
   color: #ebebeb;
-} @media (prefers-color-scheme: light) {
-  #invertable {
-    filter:invert(1)
-  }
-}
+} 
+
 /*MainTitle Component*/
 h1.mainTitle {
   font-family: var(--font-anton);
   font-weight: 400;
-  font-size: 64px;
   letter-spacing: 1px;
   -webkit-text-stroke-color: var(--background);
   -webkit-text-stroke-width: 1px;
@@ -28,20 +25,25 @@ h1.mainTitle {
 h3.subTitle{
   font-family: var(--font-goldman);
   font-weight: 400;
-  font-size: 56px;
   -webkit-text-stroke-color: var(--background);
   -webkit-text-stroke-width: 1px;
 }
 /*Description Component*/
 p.description{
   font-family: var(--font-iceland);
-  font-size: 42px;
 }
 /*Hyperlink Component*/
-a.hyperlink {
+div.hyperlink a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+a.hyperlinkText {
   font-family: var(--font-iceland);
-  font-size: 42px;
   color: var(--hyperlink);
+  width: fit-content;
   text-decoration: none;
   cursor: pointer;
 } a.hyperlink:hover {
@@ -62,6 +64,7 @@ button.mainButton{
 } 
 /*Navbar Component*/
 .navbar {
+  z-index: 2;
   background-color: transparent;
   backdrop-filter: invert(.1);
   position: sticky;
@@ -98,7 +101,6 @@ button.mainButton{
   border-radius: 10px;
   width: fit-content;
   padding: 15px;
-  padding-top: 0px;
 } .cardDeck .card{
   width: 650px;
   border: none;

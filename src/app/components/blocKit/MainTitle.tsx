@@ -2,7 +2,8 @@ import styles from "./core/blocKit.module.css"
 
 const MainTitle = (
                   props: {
-                  titleText?:string
+                  text?:string
+                  fontSize?: string; // Accepts CSS font-size values, e.g., '24px', '2rem'
                   id?:string; 
   }) => {
   /* PROPS
@@ -10,13 +11,14 @@ const MainTitle = (
     * id?:string - (Optional) The id that the <h1> subcomponent inherits
   */
 
+  const fontSize = props.fontSize? props.fontSize : '64px'
   /* Normalize titleText - defaults text to '[MainTitle Text]' if none provided */
-  const titleText = props.titleText? props.titleText : "[MainTitle]"
+  const text = props.text? props.text : "[MainTitle]"
   /* Normalize id - defaults id to 'defaultTitle' if none provided */
   const id = props.id? props.id : "defaultTitle";
   
   return(
-    <h1 className={styles.mainTitle} id={id}>{titleText}</h1>
+    <h1 style={{ fontSize }} className={styles.mainTitle} id={id}>{text}</h1>
   )
 };
 

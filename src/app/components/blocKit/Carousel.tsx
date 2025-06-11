@@ -17,7 +17,7 @@ const Modal = (props: {
 }) => {
   return(
     <div className={styles.modalContainer}>
-      <Subtitle subText={props.title}/>
+      <Subtitle text={props.title}/>
         <div className={styles.modalFocus}>
           <a href={props.projectURL}>
             <Image

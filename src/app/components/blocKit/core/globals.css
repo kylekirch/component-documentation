@@ -11,10 +11,14 @@
   :root {
     --background: #000000;
     --foreground: #ebebeb;
-  }
-  html {
+  } html {
     color-scheme: dark;
   }
+}
+@media (prefers-color-scheme: light) {
+    #invertable {
+      filter:invert(1)
+    }
 }
 html {
   max-width: 100vw;
@@ -35,3 +39,12 @@ body {
   padding: 0;
   margin: 0;
 }
+
+/*Text Classes*/
+#accent{
+  color: var(--accent);
+} #underlined {
+  border-bottom: 1px solid var(--foreground);
+} #text {
+  color: var(--foreground);
+} 

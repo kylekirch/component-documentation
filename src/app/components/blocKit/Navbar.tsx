@@ -53,7 +53,7 @@ const Navbar = (props: {
                           <></>
                         }
         {props.leftText? <MainButton
-                            buttonText={leftText[0]}
+                            text={leftText[0]}
                             href={leftText[1]}
                           />
                             :
@@ -62,7 +62,7 @@ const Navbar = (props: {
       </div>
       <div className={styles.navbarSection}>
         {props.navbarTitle? <Hyperlink 
-                                linkText={navbarTitle[0]} 
+                                text={navbarTitle[0]} 
                                 href={navbarTitle[1]}
                                 id={styles.text}
                               />
@@ -73,7 +73,7 @@ const Navbar = (props: {
       </div>
       <div className={styles.navbarSection}>
         {props.rightText? <MainButton
-                            buttonText={rightText[0]}
+                            text={rightText[0]}
                             href={rightText[1]}
                           />
                             :

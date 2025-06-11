@@ -23,8 +23,8 @@ const body_Iceland = Iceland({
 });
 
 export const metadata: Metadata = {
-  title: "blocKit Documentation",
-  description: "Created by Kyle Kirchgessner, development began 5/27/25",
+  title: "blocKit Unit Testing",
+  description: "Created by Kyle Kirchgessner",
 };
 
 export default function RootLayout({
@@ -38,30 +38,9 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </head>
       <body className={`${heading_Anton.variable} ${sub_Revalia.variable} ${body_Iceland.variable}`}>
-        <Navbar 
-              leftIcon={["/icon_top.svg", '']}
-              leftText={["Styles", '#styles']}
-              navbarTitle={["KIRCH.wiki", '']}
-              rightText={["Components", '#components']}
-              rightIcon={["/icon_github.svg", '#footerActive']}
-            />
+        <Navbar navbarTitle={["[DEVELOPMENT ONLY]", '#']}/>
         {children}
-        <Footer 
-              iconData= {[
-                      ["icon_x.svg", "#"],
-                      ["icon_insta.svg", "#"],
-                      ["icon_github.svg", "#"],
-                      ["icon_linkedin.svg", "#"]]}
-              hyperlinkData={[
-                      ["Back to Top", "#"],
-                      ["Contact", "#"],
-                      ["More", "#"]]}
-              descriptions={[
-                "© 2025 Kyle Kirchgessner",
-                "All rights reserved"
-              ]}
-              id="footerActive"
-        />
+        <Footer />
       </body>
     </html>
   );

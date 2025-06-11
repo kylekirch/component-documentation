@@ -2,8 +2,10 @@ import styles from "./core/blocKit.module.css"
 
 const Subtitle = (
                   props: {
-                  subText?:string, 
-                  id?:string
+                  text?:string;
+                  fontSize?: string; // Accepts CSS font-size values, e.g., '24px', '2rem'
+                  id?:string;
+                  children?: React.ReactNode;
   }) => {
   /* PROPS
     * subText?:string - (Required) The text displayed
@@ -11,12 +13,17 @@ const Subtitle = (
   */
   
   /* Normalize subText - defaults text to '[Subtitle]' if none provided */
-  const subText = props.subText? props.subText : "[Subtitle]"
+  const text = props.text? props.text : "[Subtitle]"
   /* Normalize id - defaults class to 'defaultSubtitle' if none provided */
   const id = props.id? props.id : "defaultSubtitle"
-  
+  const fontSize = props.fontSize? props.fontSize : '24px'
+  const children = props.children? props.children : <></>
+
   return (
-    <h3 className={styles.subtitle} id={id}>{subText}</h3>
+    <h3 style={{ fontSize }} className={styles.subtitle} id={id}>
+      {props.text? text : <></>}
+      {children}
+    </h3>
   )
 };
 
