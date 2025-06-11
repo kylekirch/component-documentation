@@ -124,28 +124,50 @@ button.mainButton{
   margin-top: 20px;
 }
 /*ContactForm Component*/
-.contactForm {
+form.contactForm {
+  border: inset 1px var(--foreground);
   display: flex;
   flex-direction: column;
+  gap: 10px;
   padding: 0px 20px;
   width: 500px;
-  border: 1px solid var(--foreground);
   border-radius: 10px;
 } .contactForm label {
   padding: 10px;
+} .contactForm label h3 {
+  padding: 10px 5px;
 } .contactForm input {
+  background-color: var(--background);
+  filter: invert(.1);
+  border: inset 1px var(--foreground);
   min-height: 40px;
   min-width: 75%;
   width: fit-content;
   max-width: 100%;
   padding: 10px;
 } .contactForm textarea {
+  background-color: var(--background);
+  filter: invert(.1);
+  border: inset 1px var(--foreground);
   resize: none;
   min-height: 150px;
   width: 100%;
   padding: 10px;
 } .contactForm .submitButton {
-  margin: 20px 0px;
+  background-color: var(--accent);
+  font-family: var(--font-goldman);
+  filter: opacity(1);
+  border: 1px transparent;
+  border-radius: 8px;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 150px;
+  margin: 25px auto;
+  cursor: pointer;
+} .contactForm .submitButton:hover {
+  filter: opacity(.9);
+  border: 1px var(--background);
+  transition: all .1s;
 }
 /*IconBelt Component*/
 .iconBelt {

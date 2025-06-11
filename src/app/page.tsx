@@ -8,8 +8,18 @@ import ContactForm from "./components/blocKit/ContactForm";
 import Carousel from "./components/blocKit/Carousel";
 import Hyperlink from "./components/blocKit/Hyperlink";
 import Image from "next/image";
+import * as dotenv from 'dotenv';
 
 export default function Home() {
+  dotenv.config();
+  const EMAILJS_USER_ID = process.env.REACT_APP_EMAILJS_USER_ID? 
+                                      process.env.REACT_APP_EMAILJS_USER_ID
+                                      :
+                                      'ERROR';
+  const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID? 
+                                      process.env.REACT_APP_EMAILJS_TEMPLATE_ID
+                                      :
+                                      'ERROR';
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -23,19 +33,26 @@ export default function Home() {
             <Description text="Docs" />
           </Hyperlink>
         </div>
+        <div>
         <Card header="Card Header" body="This is the body"> 
           <Hyperlink text="This is a child hyperlink">
             <Subtitle text="[So is this]" id="text"/>
           </Hyperlink>
         </Card>
-        <CardDeck deckTitle="Card Deck" cardData={[["Title", "Desc"], ["Title", "Desc"]]}/>
+        </div>
+        <div>
+        <CardDeck deckTitle="Card Deck" cardData={[["Title", "Desc"]]}>
+          <Card body="This is the body"> 
+            <Hyperlink text="This is a child hyperlink">
+              <Subtitle text="[So is this]" id="text"/>
+            </Hyperlink>
+          </Card>
+          <Card />
+        </CardDeck>
+        </div>
         <ContactForm   
-            fields={[ 
-              ["Name", "text", "name"], 
-              ["Email", "email", "email"], 
-              ["Message", "textarea", "message"], 
-            ]} 
-            buttonText={"Send"} 
+            EMAILJS_KEY={EMAILJS_USER_ID}
+            TEMPLATE_ID={EMAILJS_TEMPLATE_ID}
             id={"defaultForm"}  
         /> 
         <Carousel    

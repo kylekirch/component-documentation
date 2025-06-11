@@ -26,11 +26,7 @@ const Card = (props: {
 
   return(
     <div className={styles.card} id={id}>
-      {header?
-          <Subtitle text={header} id={styles.underlined} />
-            : 
-          <></>
-      }
+      <Subtitle text={header} id={styles.underlined} />
       {body?
           <Description text={body}/>
             :
@@ -39,5 +35,4 @@ const Card = (props: {
     {children}
     </div>
 )};
-
 export default Card;

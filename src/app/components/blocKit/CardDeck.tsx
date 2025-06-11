@@ -5,8 +5,9 @@ import MainTitle from "./MainTitle";
 
 const CardDeck = (props: {
                   deckTitle?:string, 
-                  cardData:Array<Array<string>>,
+                  cardData?:Array<Array<string>>,
                   id?:string
+                  children?: React.ReactNode,
   }) => {
   /* PROPS
     * deckTitle:string - (Required) The text displayed in the top section of the card
@@ -18,8 +19,8 @@ const CardDeck = (props: {
   const id = props.id? props.id : "defaultDeck";
   const deckTitle = props.deckTitle? props.deckTitle : '';
   /* Extract array of card data */
-  const cards = props.cardData;
-
+  const cards = props.cardData? props.cardData : [[]];
+  const children = props.children? props.children : <></>
 
 
   return(
@@ -28,6 +29,11 @@ const CardDeck = (props: {
       {cards.map((card, index) => (
         <Card key={index} header={card[0]} body={card[1]} />
       ))}
+      {props.children?
+        children
+        :
+        <></>
+      }
     </div>
   )
 };

@@ -5,32 +5,33 @@ import styles from "./core/blocKit.module.css"
 import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import Subtitle from './Subtitle';
+import MainTitle from "./MainTitle";
 
 export default function ContactForm(props: {
-                                    fields?: Array<Array<string>>;
-                                    buttonText?: string;
+                                    formTitle?: string;
+                                    labels?: Array<string>;
+                                    submitButton?: string;
+                                    EMAILJS_KEY: string;
+                                    TEMPLATE_ID: string;
+                                    SERVICE_ID?: string;
                                     id?: string;
 }) {
   
   /* Define defaults */
-  const defaultFields=[
-                      ["fieldText", "text", "fieldName"],
-                      ["fieldText", "text", "fieldName"],
-                      ["fieldText", "textarea", "fieldName"],
-                    ];
-  const defaultButtonText="buttonText";
+  const defaultLabels=["Name","Email","Message"];
+  const defaultButtonText="Send";
 
     /* Normalize props */
-  const fields = props.fields? props.fields: defaultFields;
-  const buttonText = props.buttonText? props.buttonText: defaultButtonText;
+  const labels = props.labels? props.labels: defaultLabels;
+  const submitButton = props.submitButton? props.submitButton: defaultButtonText;
   const id = props.id? props.id: 'defaultForm';
 
   const formRef = useRef<HTMLFormElement>(null);
-  const [status, setStatus] = useState(buttonText);
+  const [status, setStatus] = useState(submitButton);
 
   /* Handle sending the email */
   const sendEmail = (e: React.FormEvent) => {
-    emailjs.init('EMAIL_JS_KEY_HERE')
+    emailjs.init(props.EMAILJS_KEY)
     e.preventDefault();
     if (!formRef.current) return;
 
@@ -49,8 +50,8 @@ export default function ContactForm(props: {
       email: emailInput,
       message: messageInput,
     };
-    const serviceID = 'default_service';
-    const templateID = 'template_n0qkiq7';
+    const serviceID = props.SERVICE_ID? props.SERVICE_ID : 'default_service';
+    const templateID = props.TEMPLATE_ID;
     setStatus('Sending…');
     emailjs
       .send(
@@ -72,17 +73,20 @@ export default function ContactForm(props: {
 
   return (
     <form className={styles.contactForm} id={id} ref={formRef} onSubmit={sendEmail}>
-      {fields.map((field,index) => (
-        <label key={index}>
-          <Subtitle key={index} text={field[0]}/>
-          {field[1] === "textarea"? 
-            <textarea id={styles.messageBox} name={field[2]} required />
-              :
-            <input type={field[1]} name={field[2]} required />
-          }
-        </label>
-      ))}
-      <button className={styles.submitButton} type="submit"><p>{status}</p></button>
+      <MainTitle text="Contact"/>
+      <div>
+        <Subtitle text={labels[0]}/>
+        <input type="text" name="name" required />
+      </div>
+      <div>
+        <Subtitle text={labels[1]}/>
+        <input type="email" name="email" required />
+      </div>
+      <div>
+        <Subtitle text={labels[2]}/>
+        <textarea name={"message"} id={styles.messageBox} required />
+      </div>
+      <button type="submit" className={styles.submitButton} ><Subtitle text={status} fontSize="18px"/></button>
     </form>
   );
 };
