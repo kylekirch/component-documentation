@@ -21,8 +21,8 @@ var body_Iceland = google_1.Iceland({
     subsets: ["latin"]
 });
 exports.metadata = {
-    title: "blocKit Unit Testing",
-    description: "Created by Kyle Kirchgessner"
+    title: "blocKit Documentation",
+    description: "Created by Kyle Kirchgessner, development began 5/27/25"
 };
 function RootLayout(_a) {
     var children = _a.children;
@@ -30,8 +30,20 @@ function RootLayout(_a) {
         React.createElement("head", null,
             React.createElement("link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" })),
         React.createElement("body", { className: heading_Anton.variable + " " + sub_Revalia.variable + " " + body_Iceland.variable },
-            React.createElement(Navbar_1["default"], { navbarTitle: ["[DEVELOPMENT ONLY]", '#'], leftIcon: ['/icon_up.svg'], rightText: ['Docs'] }),
+            React.createElement(Navbar_1["default"], { leftIcon: ["/icon_top.svg", ''], leftText: ["Styles", '#styles'], navbarTitle: ["[DEV 0.3.0]", ''], rightText: ["Components", '#components'], rightIcon: ["/icon_github.svg", '#footerActive'] }),
             children,
-            React.createElement(Footer_1["default"], null))));
+            React.createElement(Footer_1["default"], { iconData: [
+                    ["icon_x.svg", "#"],
+                    ["icon_insta.svg", "#"],
+                    ["icon_github.svg", "#"],
+                    ["icon_linkedin.svg", "#"]
+                ], hyperlinkData: [
+                    ["Back to Top", "#"],
+                    ["Contact", "#"],
+                    ["More", "#"]
+                ], descriptions: [
+                    "© 2025 Kyle Kirchgessner",
+                    "All rights reserved"
+                ], id: "footerActive" }))));
 }
 exports["default"] = RootLayout;

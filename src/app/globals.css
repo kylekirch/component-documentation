@@ -72,20 +72,31 @@ div.prop {
   width: fit-content;
 } .prop:nth-child(even) {
   backdrop-filter: invert(.1);
-} li .properties {
+} li p#defaultDescription:nth-child(2){
+    margin: 30px auto;
+    margin-top: 15px;
+}  li .properties {
   display: flex;
   flex-direction: column;
   align-items: center;
 } li .properties .subtitle{
   margin: 10px;
   align-self: flex-start;
+} div.properties > h3 {
+  width: 98%;
+  align-self: flex-start;
+  margin: 10px 1%;
 } li .properties button{
   background-color: var(--accent);
   border: none;
-  padding-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
   margin-top: 15px;
   width: 100px;
   cursor: pointer;
+} .properties button:hover {
+  filter: opacity(.8);
+  transition: all .1s;
 } .codeSection pre {
   width: fit-content;
   max-height: fit-content;

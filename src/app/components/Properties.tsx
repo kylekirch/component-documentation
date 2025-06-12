@@ -62,7 +62,7 @@ const Properties = (
 
   return(
     <div className="properties" id={id}>
-      <Subtitle subText={text}/>
+      <Subtitle id="underlined" text={text}/>
       <Prop 
               propName="Name" 
               example=''
