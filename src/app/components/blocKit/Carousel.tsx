@@ -14,9 +14,10 @@ const Modal = (props: {
                         description: string
                         imgURL: string
                         projectURL: string
+                        id: string
 }) => {
   return(
-    <div className={styles.modalContainer}>
+    <div className={styles.modalContainer} id={props.id}>
       <Subtitle text={props.title}/>
         <div className={styles.modalFocus}>
           <a href={props.projectURL}>
@@ -38,6 +39,7 @@ const Modal = (props: {
 const Carousel = (props: {
                         numModals: number //Determines the number of modals that will be generated
                         modalData: Array<Array<string>>
+                        id?: string
                         
 }) => {
   // Define the Item type
@@ -47,7 +49,7 @@ const Carousel = (props: {
     imgURL: string;
     projectURL: string;
   };
-  
+  const id = props.id? props.id: 'defaultCarousel';
   const modalData = props.modalData;
 
   //create an array of the modal items to be used and their corresponding data
@@ -81,19 +83,24 @@ const Carousel = (props: {
         setCurrentModalNum(props.numModals-1)
     }
   };
-
+  const modalStyle = props.numModals > 1? 'underlined': 'singleModal';
   return (
-    <div>
+    <div className={styles.carousel} id={id}>
       <Modal 
         title={currentModal.title}
         description={currentModal.description}
         imgURL={currentModal.imgURL}
         projectURL={currentModal.projectURL}
+        id={modalStyle}
       />
-      <div className={styles.carouselButton}>
-        <button onClick={handleClickUp}><Image src={upIcon} alt={"Up button"}/></button>
-        <button onClick={handleClickDown}><Image src={downIcon} alt={"Down button"}/></button>
-      </div>
+      {props.numModals > 1?
+        <div className={styles.carouselButton}>
+          <button onClick={handleClickUp}><Image src={upIcon} alt={"Up button"}/></button>
+          <button onClick={handleClickDown}><Image src={downIcon} alt={"Down button"}/></button>
+        </div>
+        :
+      <></>
+      }
     </div>
   );
 }

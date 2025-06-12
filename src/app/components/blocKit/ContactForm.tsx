@@ -8,7 +8,7 @@ import Subtitle from './Subtitle';
 import MainTitle from "./MainTitle";
 
 export default function ContactForm(props: {
-                                    formTitle?: string;
+                                    title?: string;
                                     labels?: Array<string>;
                                     submitButton?: string;
                                     EMAILJS_KEY: string;
@@ -22,6 +22,7 @@ export default function ContactForm(props: {
   const defaultButtonText="Send";
 
     /* Normalize props */
+  const title = props.title? props.title: 'Contact';
   const labels = props.labels? props.labels: defaultLabels;
   const submitButton = props.submitButton? props.submitButton: defaultButtonText;
   const id = props.id? props.id: 'defaultForm';
@@ -73,7 +74,7 @@ export default function ContactForm(props: {
 
   return (
     <form className={styles.contactForm} id={id} ref={formRef} onSubmit={sendEmail}>
-      <MainTitle text="Contact"/>
+      {props.title? <MainTitle text={title} id={styles.underlined}/> : <></>}
       <div>
         <Subtitle text={labels[0]}/>
         <input type="text" name="name" required />
@@ -90,4 +91,3 @@ export default function ContactForm(props: {
     </form>
   );
 };
-

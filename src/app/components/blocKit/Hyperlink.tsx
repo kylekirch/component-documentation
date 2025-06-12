@@ -28,7 +28,7 @@ const Hyperlink = (
   return (
     <div className={styles.hyperlink}>
       {props.text? 
-        <a style={{ fontSize }} className={styles.hyperlinkText} href={href} id={id}>
+        <a style={{ fontSize }} className={styles.hyperlinkChild} href={href} id={id}>
           {text}
           {children}
         </a>

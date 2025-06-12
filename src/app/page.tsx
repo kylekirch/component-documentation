@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <MainTitle text="Component Unit Test" />
+        <MainTitle text="Component Unit Test" id="underlined" />
         <Subtitle text="By Kyle" />
         <Description text="June 6, 2025" />
         <div>
@@ -50,11 +50,23 @@ export default function Home() {
           <Card />
         </CardDeck>
         </div>
+        <div>
         <ContactForm   
+            title="Contact"
             EMAILJS_KEY={EMAILJS_USER_ID}
             TEMPLATE_ID={EMAILJS_TEMPLATE_ID}
             id={"defaultForm"}  
         /> 
+        <ContactForm   
+            title=""
+            labels={['A','B','']}
+            EMAILJS_KEY={EMAILJS_USER_ID}
+            TEMPLATE_ID={EMAILJS_TEMPLATE_ID}
+            submitButton="Launch"
+            id={"defaultForm"}  
+        /> 
+        </div>
+        <div>
         <Carousel    
             numModals={3} 
             modalData={[ 
@@ -63,6 +75,13 @@ export default function Home() {
               ["Project 3", "Project 3 Description", "/icon_dark.svg", "#proj3"] 
             ]} 
         /> 
+        <Carousel    
+            numModals={1} 
+            modalData={[ 
+              ["Single Project", "Description", "/icon_up.svg", "#proj1"], 
+            ]} 
+        /> 
+      </div>
       </main>
     </div>
   )

@@ -23,7 +23,7 @@ function Home() {
             'ERROR';
     return (React.createElement("div", { className: page_module_css_1["default"].page },
         React.createElement("main", { className: page_module_css_1["default"].main },
-            React.createElement(MainTitle_1["default"], { text: "Component Unit Test" }),
+            React.createElement(MainTitle_1["default"], { text: "Component Unit Test", id: "underlined" }),
             React.createElement(Subtitle_1["default"], { text: "By Kyle" }),
             React.createElement(Description_1["default"], { text: "June 6, 2025" }),
             React.createElement("div", null,
@@ -41,11 +41,17 @@ function Home() {
                         React.createElement(Hyperlink_1["default"], { text: "This is a child hyperlink" },
                             React.createElement(Subtitle_1["default"], { text: "[So is this]", id: "text" }))),
                     React.createElement(Card_1["default"], null))),
-            React.createElement(ContactForm_1["default"], { EMAILJS_KEY: EMAILJS_USER_ID, TEMPLATE_ID: EMAILJS_TEMPLATE_ID, id: "defaultForm" }),
-            React.createElement(Carousel_1["default"], { numModals: 3, modalData: [
-                    ["Project 1", "Project 1 Description", "/icon_light.svg", "#proj1"],
-                    ["Project 2", "Project 2 Description", "/icon_github.svg", "#proj2"],
-                    ["Project 3", "Project 3 Description", "/icon_dark.svg", "#proj3"]
-                ] }))));
+            React.createElement("div", null,
+                React.createElement(ContactForm_1["default"], { title: "Contact", EMAILJS_KEY: EMAILJS_USER_ID, TEMPLATE_ID: EMAILJS_TEMPLATE_ID, id: "defaultForm" }),
+                React.createElement(ContactForm_1["default"], { title: "", labels: ['A', 'B', ''], EMAILJS_KEY: EMAILJS_USER_ID, TEMPLATE_ID: EMAILJS_TEMPLATE_ID, submitButton: "Launch", id: "defaultForm" })),
+            React.createElement("div", null,
+                React.createElement(Carousel_1["default"], { numModals: 3, modalData: [
+                        ["Project 1", "Project 1 Description", "/icon_light.svg", "#proj1"],
+                        ["Project 2", "Project 2 Description", "/icon_github.svg", "#proj2"],
+                        ["Project 3", "Project 3 Description", "/icon_dark.svg", "#proj3"]
+                    ] }),
+                React.createElement(Carousel_1["default"], { numModals: 1, modalData: [
+                        ["Single Project", "Description", "/icon_up.svg", "#proj1"],
+                    ] })))));
 }
 exports["default"] = Home;

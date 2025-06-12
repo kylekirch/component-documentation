@@ -11,6 +11,7 @@
   border-bottom: 1px solid var(--foreground);
 } #text {
   color: #ebebeb;
+  text-decoration-color: var(--foreground);
 } 
 
 /*MainTitle Component*/
@@ -39,15 +40,16 @@ div.hyperlink a {
   align-items: center;
   width: fit-content;
   height: fit-content;
+  color: var(--hyperlink);
+  text-decoration: none;
 }
 a.hyperlinkText {
   font-family: var(--font-iceland);
-  color: var(--hyperlink);
   width: fit-content;
-  text-decoration: none;
   cursor: pointer;
 } a.hyperlink:hover {
-  filter: opacity(.8);
+  filter: opacity(.1);
+  transition: all .1s;
 }
 /*MainButton Component*/
 button.mainButton{
@@ -108,34 +110,55 @@ button.mainButton{
   text-align: center;
 }
 /*Carousel Component*/
-.modalContainer {
+div .carousel{
+  border: inset 1px var(--foreground);
+  border-radius: 10px;
+  padding: 20px;
+} .carousel .modalContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-} .modalContainer .modalFocus {
+} .modalContainer .subtitle{
+  margin: 5px;
+  margin-bottom: 15px;
+}.modalContainer .modalFocus {
   text-align: center;
   align-self: center;
   align-items: center;
-} .carouselButton {
+} .modalFocus .description{
+  margin: 20px auto;
+} .modalFocus .modalImage {
+  padding: 5px;
+  border-radius: 5px;
+}
+.carouselButton {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  margin-top: 20px;
+  margin: 25px 0px 0px;
+} .carouselButton button{ 
+  padding: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: inset 1px var(--foreground);
+  cursor: pointer;
+} .carouselButton button:hover{
+  backdrop-filter: invert(.1);
+  transition: all .1s;
 }
+
 /*ContactForm Component*/
 form.contactForm {
   border: inset 1px var(--foreground);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0px 20px;
+  padding: 10px 20px;
   width: 500px;
   border-radius: 10px;
-} .contactForm label {
+} .contactForm div > .subtitle {
   padding: 10px;
-} .contactForm label h3 {
-  padding: 10px 5px;
 } .contactForm input {
   background-color: var(--background);
   filter: invert(.1);
@@ -162,7 +185,8 @@ form.contactForm {
   width: fit-content;
   height: fit-content;
   padding: 10px 150px;
-  margin: 25px auto;
+  margin: 10px auto;
+  margin-top: 10px;
   cursor: pointer;
 } .contactForm .submitButton:hover {
   filter: opacity(.9);

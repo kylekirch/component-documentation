@@ -11,6 +11,7 @@ function ContactForm(props) {
     var defaultLabels = ["Name", "Email", "Message"];
     var defaultButtonText = "Send";
     /* Normalize props */
+    var title = props.title ? props.title : 'Contact';
     var labels = props.labels ? props.labels : defaultLabels;
     var submitButton = props.submitButton ? props.submitButton : defaultButtonText;
     var id = props.id ? props.id : 'defaultForm';
@@ -51,7 +52,7 @@ function ContactForm(props) {
         });
     };
     return (React.createElement("form", { className: blocKit_module_css_1["default"].contactForm, id: id, ref: formRef, onSubmit: sendEmail },
-        React.createElement(MainTitle_1["default"], { text: "Contact" }),
+        props.title ? React.createElement(MainTitle_1["default"], { text: title, id: blocKit_module_css_1["default"].underlined }) : React.createElement(React.Fragment, null),
         React.createElement("div", null,
             React.createElement(Subtitle_1["default"], { text: labels[0] }),
             React.createElement("input", { type: "text", name: "name", required: true })),
