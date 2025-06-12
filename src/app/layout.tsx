@@ -38,7 +38,7 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </head>
       <body className={`${heading_Anton.variable} ${sub_Revalia.variable} ${body_Iceland.variable}`}>
-        <Navbar navbarTitle={["[DEVELOPMENT ONLY]", '#']}/>
+        <Navbar navbarTitle={["[DEVELOPMENT ONLY]", '#']} leftIcon={['/icon_up.svg']} rightText={['Docs']}/>
         {children}
         <Footer />
       </body>

@@ -10,6 +10,7 @@ const MainButton = (props: {
                     icon?:string;
                     iconWidth?:number;
                     iconHeight?:number;
+                    imageID?:string;
                     id?:string;
   }) => {
   /* PROPS
@@ -31,10 +32,10 @@ const MainButton = (props: {
   const iconHeight = props.iconHeight? props.iconHeight:50;
   /* Normalize id - defaults class to 'defaultButton' if none provided */
   const id = props.id? props.id : "defaultButton"
-  const fontSize = props.fontSize? props.fontSize : '48px'
+  const fontSize = props.fontSize? props.fontSize : '24px'
 
   return(
-    <a href={href}>
+    <a href={href} className={styles.mainButtonRef}>
       <button className={styles.mainButton} id={id}>
         {icon? /* Validate icon address - Returns an empty element if none provided*/
                     <Image 
@@ -42,11 +43,12 @@ const MainButton = (props: {
                         alt={text +" button icon"}
                         width={iconWidth} 
                         height={iconHeight}
+                        id={props.imageID}
                       />
                     :
                     <></>}
         {text? /* Validate buttonText - Returns an empty element if none provided*/
-                    <Subtitle fontSize={fontSize} text={text} />
+                    <Subtitle id={styles.text} fontSize={fontSize} text={text} />
                     :
                     <></>}
       </button>

@@ -63,7 +63,7 @@ function ContactForm(props) {
             React.createElement(Subtitle_1["default"], { text: labels[2] }),
             React.createElement("textarea", { name: "message", id: blocKit_module_css_1["default"].messageBox, required: true })),
         React.createElement("button", { type: "submit", className: blocKit_module_css_1["default"].submitButton },
-            React.createElement(Subtitle_1["default"], { text: status, fontSize: "18px" }))));
+            React.createElement(Subtitle_1["default"], { text: status, fontSize: "18px", id: blocKit_module_css_1["default"].text }))));
 }
 exports["default"] = ContactForm;
 ;

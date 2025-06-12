@@ -87,7 +87,7 @@ export default function ContactForm(props: {
         <Subtitle text={labels[2]}/>
         <textarea name={"message"} id={styles.messageBox} required />
       </div>
-      <button type="submit" className={styles.submitButton} ><Subtitle text={status} fontSize="18px"/></button>
+      <button type="submit" className={styles.submitButton} ><Subtitle text={status} fontSize="18px" id={styles.text} /></button>
     </form>
   );
 };

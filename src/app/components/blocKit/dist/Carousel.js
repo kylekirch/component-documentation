@@ -56,9 +56,9 @@ var Carousel = function (props) {
         React.createElement(Modal, { title: currentModal.title, description: currentModal.description, imgURL: currentModal.imgURL, projectURL: currentModal.projectURL, id: modalStyle }),
         props.numModals > 1 ?
             React.createElement("div", { className: blocKit_module_css_1["default"].carouselButton },
-                React.createElement("button", { onClick: handleClickUp },
+                React.createElement("button", { className: blocKit_module_css_1["default"].changeButton, onClick: handleClickUp, id: "invertable" },
                     React.createElement(image_1["default"], { src: icon_up_svg_1["default"], alt: "Up button" })),
-                React.createElement("button", { onClick: handleClickDown },
+                React.createElement("button", { className: blocKit_module_css_1["default"].changeButton, onClick: handleClickDown, id: "invertable" },
                     React.createElement(image_1["default"], { src: icon_down_svg_1["default"], alt: "Down button" })))
             :
                 React.createElement(React.Fragment, null)));

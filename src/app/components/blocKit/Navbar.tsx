@@ -1,7 +1,7 @@
 import styles from "./core/blocKit.module.css"
 
 import MainButton from "./MainButton"
-import Hyperlink from "./Hyperlink";
+import Description from "./Description";
 import errorIcon from "./core/assets/img/icon_error.svg";
 
 const Navbar = (props: {
@@ -46,8 +46,9 @@ const Navbar = (props: {
         {props.leftIcon? <MainButton
                             icon={leftIcon[0]}
                             href={leftIcon[1]}
-                            iconWidth={35}
-                            iconHeight={35}
+                            iconWidth={40}
+                            iconHeight={40}
+                            id={styles.icon}
                           />
                             :
                           <></>
@@ -61,10 +62,9 @@ const Navbar = (props: {
                         }
       </div>
       <div className={styles.navbarSection}>
-        {props.navbarTitle? <Hyperlink 
+        {props.navbarTitle? <Description 
                                 text={navbarTitle[0]} 
-                                href={navbarTitle[1]}
-                                id={styles.text}
+                                id={styles.navbarTitle}
                               />
                                 
                               :
@@ -82,8 +82,9 @@ const Navbar = (props: {
         {props.rightIcon? <MainButton
                             icon={rightIcon[0]}
                             href={rightIcon[1]}
-                            iconWidth={35}
-                            iconHeight={35}
+                            iconWidth={40}
+                            iconHeight={40}
+                            id={styles.icon}
                           />
                             :
                           <></>
