@@ -1,6 +1,5 @@
 import styles from "./core/blocKit.module.css";
 
-import Subtitle from "./Subtitle";
 
 const Hyperlink = (
                   props: { 
