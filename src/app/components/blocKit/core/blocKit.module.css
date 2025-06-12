@@ -81,9 +81,12 @@ button.mainButton{
 } .navbar .navbarSection {
   min-width: 25%;
   display: flex;
+  justify-content: center;
   align-items: center;
   text-align: center;
   gap: 5px
+} .navbarSection:first-of-type {
+  justify-content: flex-start;
 } .navbarSection:last-of-type {
   justify-content: flex-end;
 } .navbarSection .hyperlink{

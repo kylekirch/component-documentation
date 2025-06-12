@@ -60,8 +60,8 @@ div.prop {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 15px;
   align-items: flex-start;
+  gap: 5px;
 } .prop div{
   width: 15%;
 } .prop div:nth-child(2) {
@@ -72,7 +72,10 @@ div.prop {
   width: fit-content;
 } .prop:nth-child(even) {
   backdrop-filter: invert(.1);
-} li p#defaultDescription:nth-child(2){
+} .prop >div {
+  align-self: center;
+}
+li p#defaultDescription:nth-child(2){
     margin: 30px auto;
     margin-top: 15px;
 }  li .properties {

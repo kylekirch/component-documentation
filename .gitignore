@@ -19,7 +19,7 @@
 # testing
 /coverage
 /dist
-/dist/
+dist/*
 
 # next.js
 /.next/
